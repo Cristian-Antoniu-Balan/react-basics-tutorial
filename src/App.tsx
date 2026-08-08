@@ -2,18 +2,20 @@ import { useState } from 'react';
 import UseStateCounter from './examples/UseStateCounter';
 import ClassCounter from './examples/ClassCounter';
 import PureVsImpure from './examples/PureVsImpure';
+import PrettierAndTailwind from './examples/PrettierAndTailwind';
 import './App.css';
 
-type ExampleId = 'useState-counter' | 'class-counter' | 'pure-vs-impure';
+type ExampleId = 'useState-counter' | 'class-counter' | 'pure-vs-impure' | 'prettier-tailwind';
 
 const examples: { id: ExampleId; label: string }[] = [
   { id: 'useState-counter', label: 'useState — Counter' },
   { id: 'class-counter', label: 'Class — Counter' },
   { id: 'pure-vs-impure', label: 'Pure vs impure' },
+  { id: 'prettier-tailwind', label: 'Prettier + Tailwind' },
 ];
 
 function App() {
-  const [activeExample, setActiveExample] = useState<number>(2);
+  const [activeExample, setActiveExample] = useState<number>(3);
 
   return (
     <>
@@ -39,6 +41,7 @@ function App() {
         {activeExample === 0 && <UseStateCounter />}
         {activeExample === 1 && <ClassCounter />}
         {activeExample === 2 && <PureVsImpure />}
+        {activeExample === 3 && <PrettierAndTailwind />}
       </section>
 
       <div className='ticks'></div>
