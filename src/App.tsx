@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import UseStateCounter from './examples/UseStateCounter'
+import ClassCounter from './examples/ClassCounter'
 import './App.css'
 
-type ExampleId = 'useState-counter'
+type ExampleId = 'useState-counter' | 'class-counter'
 
 const examples: { id: ExampleId; label: string }[] = [
   { id: 'useState-counter', label: 'useState — Counter' },
+  { id: 'class-counter', label: 'Class — Counter' },
 ]
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
         </nav>
 
         {activeExample === 'useState-counter' && <UseStateCounter />}
+        {activeExample === 'class-counter' && <ClassCounter />}
       </section>
 
       <div className="ticks"></div>
