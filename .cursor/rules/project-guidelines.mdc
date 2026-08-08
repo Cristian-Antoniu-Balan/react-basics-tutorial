@@ -1,4 +1,7 @@
-<!-- AUTO-GENERATED from docs/agent-instructions.md - do not edit directly -->
+---
+description: AI tutor project guidelines for the React Basics Tutorial
+alwaysApply: false
+---
 
 # AI Tutor Instructions — React Basics Tutorial
 
@@ -41,40 +44,40 @@ For each concept, follow this sequence:
 
 When introducing a term for the first time, **name it explicitly** and give a one-line definition. Core terms to cover across the curriculum:
 
-| Term | When introduced |
-| ---- | --------------- |
-| JSX | Lesson 1 |
-| Component | Lesson 2 |
-| Props | Lesson 2 |
-| State | Lesson 3 |
-| Hook | Lesson 3 (`useState`), Lesson 6 (`useEffect`) |
-| Event handler | Lesson 3 |
-| Conditional rendering | Lesson 3 |
-| Key | Lesson 4 |
-| Controlled input | Lesson 5 |
-| Side effect | Lesson 6 |
-| Custom hook | Lesson 7 |
-| Context / Provider | Lesson 8 |
-| Route / Layout | Lesson 9 |
-| Fetch / async state | Lesson 10 |
+| Term                  | When introduced                               |
+| --------------------- | --------------------------------------------- |
+| JSX                   | Lesson 1                                      |
+| Component             | Lesson 2                                      |
+| Props                 | Lesson 2                                      |
+| State                 | Lesson 3                                      |
+| Hook                  | Lesson 3 (`useState`), Lesson 6 (`useEffect`) |
+| Event handler         | Lesson 3                                      |
+| Conditional rendering | Lesson 3                                      |
+| Key                   | Lesson 4                                      |
+| Controlled input      | Lesson 5                                      |
+| Side effect           | Lesson 6                                      |
+| Custom hook           | Lesson 7                                      |
+| Context / Provider    | Lesson 8                                      |
+| Route / Layout        | Lesson 9                                      |
+| Fetch / async state   | Lesson 10                                     |
 
 ## Curriculum
 
 Follow the lesson order in [requirements.md](requirements.md). The app is a **Task Board** that grows with each lesson.
 
-| Lesson | Focus |
-| ------ | ----- |
-| 1 | Vite setup, JSX, first render |
-| 2 | Components and props |
-| 3 | State, events, conditional rendering |
-| 4 | Lists and keys |
-| 5 | Forms |
-| 6 | useEffect and localStorage |
-| 7 | Custom hooks |
-| 8 | Context |
-| 9 | React Router |
-| 10 | Data fetching |
-| 11 | Project structure |
+| Lesson | Focus                                |
+| ------ | ------------------------------------ |
+| 1      | Vite setup, JSX, first render        |
+| 2      | Components and props                 |
+| 3      | State, events, conditional rendering |
+| 4      | Lists and keys                       |
+| 5      | Forms                                |
+| 6      | useEffect and localStorage           |
+| 7      | Custom hooks                         |
+| 8      | Context                              |
+| 9      | React Router                         |
+| 10     | Data fetching                        |
+| 11     | Project structure                    |
 
 When the learner says **"Start Lesson 1"** or **"Continue where we left off"**, check [progress.md](progress.md) to determine the current lesson, then resume from there.
 

@@ -79,11 +79,12 @@ This project ships synchronized tutor instructions for different tools:
 
 | File | Purpose |
 | ---- | ------- |
-| [cursor.md](cursor.md) | Cursor agent entry point |
+| [.cursor/rules/project-guidelines.mdc](.cursor/rules/project-guidelines.mdc) | Cursor project guidelines (always apply) — **edit this** |
 | [claude.md](claude.md) | Claude agent entry point |
+| [docs/agent-instructions.md](docs/agent-instructions.md) | Docs copy of tutor rules |
 | [.github/cursor-instructions.md](.github/cursor-instructions.md) | GitHub/Cursor context |
 
-**Source of truth:** [docs/agent-instructions.md](docs/agent-instructions.md)
+**Source of truth:** [.cursor/rules/project-guidelines.mdc](.cursor/rules/project-guidelines.mdc)
 
 After editing the source, sync all copies:
 
@@ -99,20 +100,21 @@ bash scripts/sync-instructions.sh
 
 ```
 react-basics-tutorial/
+├── .cursor/rules/
+│   └── project-guidelines.mdc # AI tutor rules (edit this)
 ├── docs/
-│   ├── requirements.md       # Full spec
-│   ├── agent-instructions.md # AI tutor rules (edit this)
-│   └── progress.md           # Your lesson checklist
+│   ├── requirements.md        # Full spec
+│   ├── agent-instructions.md  # Generated — do not edit
+│   └── progress.md            # Your lesson checklist
 ├── scripts/
 │   ├── sync-instructions.sh
 │   └── sync-instructions.ps1
-├── src/                      # Created in Lesson 1
+├── src/                       # Created in Lesson 1
 │   ├── components/
 │   ├── hooks/
 │   ├── pages/
 │   └── types/
-├── cursor.md                 # Generated — do not edit
-├── claude.md                 # Generated — do not edit
+├── claude.md                  # Generated — do not edit
 └── README.md
 ```
 

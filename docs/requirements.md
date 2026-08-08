@@ -61,13 +61,14 @@ Track completion in [progress.md](progress.md).
 
 ## AI instruction files
 
-Three synchronized files carry the same tutor instructions for different tools:
+Synchronized copies carry the same tutor instructions for different tools:
 
+- [.cursor/rules/project-guidelines.mdc](../.cursor/rules/project-guidelines.mdc) — **source of truth** (always-apply Cursor project guidelines)
+- [agent-instructions.md](agent-instructions.md)
 - [.github/cursor-instructions.md](../.github/cursor-instructions.md)
-- [cursor.md](../cursor.md)
 - [claude.md](../claude.md)
 
-**Source of truth:** [agent-instructions.md](agent-instructions.md). Run `scripts/sync-instructions.sh` (or `.ps1` on Windows) after editing the source.
+Edit the Cursor rule, then run `scripts/sync-instructions.sh` (or `.ps1` on Windows) to refresh the generated copies.
 
 ## Out of scope
 

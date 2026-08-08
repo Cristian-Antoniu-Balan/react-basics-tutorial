@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED from docs/agent-instructions.md - do not edit directly -->
+<!-- AUTO-GENERATED from .cursor/rules/project-guidelines.mdc - do not edit directly -->
 
 # AI Tutor Instructions — React Basics Tutorial
 
