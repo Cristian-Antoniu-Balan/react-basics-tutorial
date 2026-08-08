@@ -1,75 +1,123 @@
-# React + TypeScript + Vite
+# React Basics Tutorial
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Step-by-step React learning for developers who know Python, Java, or C# but not JavaScript.
 
-Currently, two official plugins are available:
+## Who this is for
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Experienced programmers who want to learn React by building a real app — not by reading a pre-built codebase. You write every line; an AI tutor guides you one concept at a time.
 
-## React Compiler
+## What you'll build
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+A **Task Board** application that grows across 11 lessons: from a blank Vite scaffold to a typed, routed app with persisted state, shared context, and data fetching.
 
-## Expanding the ESLint configuration
+## How learning works
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Open this repo in Cursor (or use Claude with [claude.md](claude.md)).
+2. Say **"Start Lesson 1"** or **"Continue where we left off"**.
+3. The AI explains one concept, gives you a small task, and reviews your code.
+4. You implement the task yourself — the AI does not dump full solutions.
+5. Progress is tracked in [docs/progress.md](docs/progress.md).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Layer | Choice |
+| ----- | ------ |
+| UI | React 19+ |
+| Language | TypeScript |
+| Build tool | Vite |
+| Routing | React Router (Lesson 9) |
+| Package manager | npm |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Prerequisites
 
+- [Node.js](https://nodejs.org/) 18 or later
+- npm (included with Node.js)
+- A code editor (Cursor recommended)
+
+## Getting started
+
+```bash
+git clone <repo-url>
+cd react-basics-tutorial
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open the project in your editor, then tell your AI assistant:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+> Start Lesson 1
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Lesson 1 walks you through scaffolding the app:
+
+```bash
+npm create vite@latest . -- --template react-ts
+npm install
+npm run dev
+```
+
+**This repo starts without application code.** The Vite project is created during Lesson 1, not before.
+
+## Curriculum overview
+
+| Lesson | Topics | Milestone |
+| ------ | ------ | --------- |
+| 1 | JSX, Vite setup | App renders a greeting |
+| 2 | Components, props | `TaskCard`, `Header` |
+| 3 | State, events | Add/toggle/delete tasks |
+| 4 | Lists, keys | Task list rendering |
+| 5 | Forms | Task creation form |
+| 6 | useEffect, localStorage | Persist tasks |
+| 7 | Custom hooks | `useLocalStorage`, `useTasks` |
+| 8 | Context | Theme or filter preference |
+| 9 | React Router | Multiple pages |
+| 10 | Data fetching | Load tasks from API/JSON |
+| 11 | Project structure | Organized `src/` folders |
+
+Full details: [docs/requirements.md](docs/requirements.md)
+
+## Working with AI assistants
+
+This project ships synchronized tutor instructions for different tools:
+
+| File | Purpose |
+| ---- | ------- |
+| [cursor.md](cursor.md) | Cursor agent entry point |
+| [claude.md](claude.md) | Claude agent entry point |
+| [.github/cursor-instructions.md](.github/cursor-instructions.md) | GitHub/Cursor context |
+
+**Source of truth:** [docs/agent-instructions.md](docs/agent-instructions.md)
+
+After editing the source, sync all copies:
+
+```bash
+# Linux / macOS / Git Bash
+bash scripts/sync-instructions.sh
+
+# Windows PowerShell
+.\scripts\sync-instructions.ps1
+```
+
+## Project structure (after Lesson 1)
 
 ```
+react-basics-tutorial/
+├── docs/
+│   ├── requirements.md       # Full spec
+│   ├── agent-instructions.md # AI tutor rules (edit this)
+│   └── progress.md           # Your lesson checklist
+├── scripts/
+│   ├── sync-instructions.sh
+│   └── sync-instructions.ps1
+├── src/                      # Created in Lesson 1
+│   ├── components/
+│   ├── hooks/
+│   ├── pages/
+│   └── types/
+├── cursor.md                 # Generated — do not edit
+├── claude.md                 # Generated — do not edit
+└── README.md
+```
+
+Folders under `src/` are introduced gradually across lessons 1–11.
+
+## License
+
+MIT — use freely for learning and teaching.
