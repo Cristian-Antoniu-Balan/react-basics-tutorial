@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import { Component } from "react";
 
 /**
  * Same counter as UseStateCounter, but as a class component.
@@ -12,28 +12,28 @@ import { Component } from 'react'
  * avoid needing .bind in the constructor).
  */
 type ClassCounterState = {
-  count: number
-}
+  count: number;
+};
 
 class ClassCounter extends Component<object, ClassCounterState> {
   state: ClassCounterState = {
     count: 0,
-  }
+  };
 
   increase = () => {
-    this.setState({ count: this.state.count + 1 })
-  }
+    this.setState({ count: this.state.count + 1 });
+  };
 
   decrease = () => {
-    this.setState({ count: this.state.count - 1 })
-  }
+    this.setState({ count: this.state.count - 1 });
+  };
 
   reset = () => {
-    this.setState({ count: 0 })
-  }
+    this.setState({ count: 0 });
+  };
 
   render() {
-    const { count } = this.state
+    const { count } = this.state;
 
     return (
       <div>
@@ -53,8 +53,8 @@ class ClassCounter extends Component<object, ClassCounterState> {
           </button>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default ClassCounter
+export default ClassCounter;

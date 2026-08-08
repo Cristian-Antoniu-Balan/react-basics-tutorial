@@ -20,13 +20,13 @@ A **Task Board** application that grows across 11 lessons: from a blank Vite sca
 
 ## Tech stack
 
-| Layer | Choice |
-| ----- | ------ |
-| UI | React 19+ |
-| Language | TypeScript |
-| Build tool | Vite |
-| Routing | React Router (Lesson 9) |
-| Package manager | npm |
+| Layer           | Choice                  |
+| --------------- | ----------------------- |
+| UI              | React 19+               |
+| Language        | TypeScript              |
+| Build tool      | Vite                    |
+| Routing         | React Router (Lesson 9) |
+| Package manager | npm                     |
 
 ## Prerequisites
 
@@ -57,19 +57,19 @@ npm run dev
 
 ## Curriculum overview
 
-| Lesson | Topics | Milestone |
-| ------ | ------ | --------- |
-| 1 | JSX, Vite setup | App renders a greeting |
-| 2 | Components, props | `TaskCard`, `Header` |
-| 3 | State, events | Add/toggle/delete tasks |
-| 4 | Lists, keys | Task list rendering |
-| 5 | Forms | Task creation form |
-| 6 | useEffect, localStorage | Persist tasks |
-| 7 | Custom hooks | `useLocalStorage`, `useTasks` |
-| 8 | Context | Theme or filter preference |
-| 9 | React Router | Multiple pages |
-| 10 | Data fetching | Load tasks from API/JSON |
-| 11 | Project structure | Organized `src/` folders |
+| Lesson | Topics                  | Milestone                     |
+| ------ | ----------------------- | ----------------------------- |
+| 1      | JSX, Vite setup         | App renders a greeting        |
+| 2      | Components, props       | `TaskCard`, `Header`          |
+| 3      | State, events           | Add/toggle/delete tasks       |
+| 4      | Lists, keys             | Task list rendering           |
+| 5      | Forms                   | Task creation form            |
+| 6      | useEffect, localStorage | Persist tasks                 |
+| 7      | Custom hooks            | `useLocalStorage`, `useTasks` |
+| 8      | Context                 | Theme or filter preference    |
+| 9      | React Router            | Multiple pages                |
+| 10     | Data fetching           | Load tasks from API/JSON      |
+| 11     | Project structure       | Organized `src/` folders      |
 
 Full details: [docs/requirements.md](docs/requirements.md)
 
@@ -77,12 +77,12 @@ Full details: [docs/requirements.md](docs/requirements.md)
 
 This project ships synchronized tutor instructions for different tools:
 
-| File | Purpose |
-| ---- | ------- |
+| File                                                                         | Purpose                                                  |
+| ---------------------------------------------------------------------------- | -------------------------------------------------------- |
 | [.cursor/rules/project-guidelines.mdc](.cursor/rules/project-guidelines.mdc) | Cursor project guidelines (always apply) — **edit this** |
-| [claude.md](claude.md) | Claude agent entry point |
-| [docs/agent-instructions.md](docs/agent-instructions.md) | Docs copy of tutor rules |
-| [.github/cursor-instructions.md](.github/cursor-instructions.md) | GitHub/Cursor context |
+| [claude.md](claude.md)                                                       | Claude agent entry point                                 |
+| [docs/agent-instructions.md](docs/agent-instructions.md)                     | Docs copy of tutor rules                                 |
+| [.github/cursor-instructions.md](.github/cursor-instructions.md)             | GitHub/Cursor context                                    |
 
 **Source of truth:** [.cursor/rules/project-guidelines.mdc](.cursor/rules/project-guidelines.mdc)
 

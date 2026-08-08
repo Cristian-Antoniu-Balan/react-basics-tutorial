@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import UseStateCounter from './examples/UseStateCounter';
-import ClassCounter from './examples/ClassCounter';
-import PureVsImpure from './examples/PureVsImpure';
-import PrettierAndTailwind from './examples/PrettierAndTailwind';
-import './App.css';
+import { useState } from "react";
+import UseStateCounter from "./examples/UseStateCounter";
+import ClassCounter from "./examples/ClassCounter";
+import PureVsImpure from "./examples/PureVsImpure";
+import PrettierAndTailwind from "./examples/PrettierAndTailwind";
+import "./App.css";
 
-type ExampleId = 'useState-counter' | 'class-counter' | 'pure-vs-impure' | 'prettier-tailwind';
+type ExampleId = "useState-counter" | "class-counter" | "pure-vs-impure" | "prettier-tailwind";
 
 const examples: { id: ExampleId; label: string }[] = [
-  { id: 'useState-counter', label: 'useState — Counter' },
-  { id: 'class-counter', label: 'Class — Counter' },
-  { id: 'pure-vs-impure', label: 'Pure vs impure' },
-  { id: 'prettier-tailwind', label: 'Prettier + Tailwind' },
+  { id: "useState-counter", label: "useState — Counter" },
+  { id: "class-counter", label: "Class — Counter" },
+  { id: "pure-vs-impure", label: "Pure vs impure" },
+  { id: "prettier-tailwind", label: "Prettier + Tailwind" },
 ];
 
 function App() {
@@ -19,18 +19,18 @@ function App() {
 
   return (
     <>
-      <section id='center'>
+      <section id="center">
         <div>
           <h1>React Basics</h1>
           <p>Functional examples — switch below to explore each concept.</p>
         </div>
 
-        <nav className='example-nav' aria-label='Examples'>
+        <nav className="example-nav" aria-label="Examples">
           {examples.map((example, index) => (
             <button
               key={example.id}
-              type='button'
-              className={activeExample === index ? 'active' : undefined}
+              type="button"
+              className={activeExample === index ? "active" : undefined}
               onClick={() => setActiveExample(index)}
             >
               {example.label}
@@ -44,8 +44,8 @@ function App() {
         {activeExample === 3 && <PrettierAndTailwind />}
       </section>
 
-      <div className='ticks'></div>
-      <section id='spacer'></section>
+      <div className="ticks"></div>
+      <section id="spacer"></section>
     </>
   );
 }

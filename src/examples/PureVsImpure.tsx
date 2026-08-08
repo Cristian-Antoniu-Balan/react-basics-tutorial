@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 /**
  * Pure vs impure functions
@@ -16,9 +16,7 @@ function calculatePure(base: number, extra: number): number {
 }
 
 function calculateImpure(base: number, extra: number): number {
-  const checkbox = document.getElementById(
-    'include-bonus',
-  ) as HTMLInputElement | null;
+  const checkbox = document.getElementById("include-bonus") as HTMLInputElement | null;
   const includeBonus = checkbox?.checked ?? false;
   const sum = base + extra;
   return includeBonus ? sum * 1.1 : sum;
@@ -37,27 +35,19 @@ function PureVsImpure() {
 
       <div
         style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center',
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
         }}
       >
         <div>
           Base: <code>{base}</code>
         </div>
         <div>
-          <button
-            type='button'
-            className='counter'
-            onClick={() => setBase(base - 1)}
-          >
+          <button type="button" className="counter" onClick={() => setBase(base - 1)}>
             −
           </button>
-          <button
-            type='button'
-            className='counter'
-            onClick={() => setBase(base + 1)}
-          >
+          <button type="button" className="counter" onClick={() => setBase(base + 1)}>
             +
           </button>
         </div>
@@ -65,27 +55,19 @@ function PureVsImpure() {
 
       <div
         style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center',
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
         }}
       >
         <div>
           Extra: <code>{extra}</code>
         </div>
         <div>
-          <button
-            type='button'
-            className='counter'
-            onClick={() => setExtra(extra - 1)}
-          >
+          <button type="button" className="counter" onClick={() => setExtra(extra - 1)}>
             −
           </button>
-          <button
-            type='button'
-            className='counter'
-            onClick={() => setExtra(extra + 1)}
-          >
+          <button type="button" className="counter" onClick={() => setExtra(extra + 1)}>
             +
           </button>
         </div>
@@ -93,18 +75,18 @@ function PureVsImpure() {
 
       <p>
         <label>
-          <input id='include-bonus' type='checkbox' /> Include 10% bonus
+          <input id="include-bonus" type="checkbox" /> Include 10% bonus
         </label>
       </p>
 
       <p>
         Pure: <code>{pureResult}</code>
-        {' — '}
+        {" — "}
         <code>calculatePure(base, extra, includeBonus)</code>
       </p>
       <p>
         Impure: <code>{impureResult}</code>
-        {' — '}
+        {" — "}
         <code>calculateImpure(base, extra)</code> (reads checkbox in the DOM)
       </p>
     </div>

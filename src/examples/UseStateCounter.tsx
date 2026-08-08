@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from "react";
 
 /**
  * Lesson 3 — useState
@@ -7,7 +7,7 @@ import { useState } from 'react'
  * When you call the setter, React re-renders the component with the new value.
  */
 function UseStateCounter() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div>
@@ -16,18 +16,10 @@ function UseStateCounter() {
         Count is <code>{count}</code>
       </p>
       <div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount(count + 1)}
-        >
+        <button type="button" className="counter" onClick={() => setCount(count + 1)}>
           Increase
         </button>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount(count - 1)}
-        >
+        <button type="button" className="counter" onClick={() => setCount(count - 1)}>
           Decrease
         </button>
         <button type="button" className="counter" onClick={() => setCount(0)}>
@@ -35,7 +27,7 @@ function UseStateCounter() {
         </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default UseStateCounter
+export default UseStateCounter;
