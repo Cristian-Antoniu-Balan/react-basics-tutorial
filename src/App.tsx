@@ -1,17 +1,17 @@
-import { useState } from "react";
-import UseStateCounter from "./examples/UseStateCounter";
-import ClassCounter from "./examples/ClassCounter";
-import PureVsImpure from "./examples/PureVsImpure";
-import PrettierAndTailwind from "./examples/PrettierAndTailwind";
-import "./App.css";
+import { useState } from 'react';
+import UseStateCounter from './examples/UseStateCounter';
+import ClassCounter from './examples/ClassCounter';
+import PureVsImpure from './examples/PureVsImpure';
+import PrettierAndTailwind from './examples/PrettierAndTailwind';
+import './App.css';
 
-type ExampleId = "useState-counter" | "class-counter" | "pure-vs-impure" | "prettier-tailwind";
+type ExampleId = 'useState-counter' | 'class-counter' | 'pure-vs-impure' | 'prettier-tailwind';
 
 const examples: { id: ExampleId; label: string }[] = [
-  { id: "useState-counter", label: "useState — Counter" },
-  { id: "class-counter", label: "Class — Counter" },
-  { id: "pure-vs-impure", label: "Pure vs impure" },
-  { id: "prettier-tailwind", label: "Prettier + Tailwind" },
+  { id: 'useState-counter', label: 'useState — Counter' },
+  { id: 'class-counter', label: 'Class — Counter' },
+  { id: 'pure-vs-impure', label: 'Pure vs impure' },
+  { id: 'prettier-tailwind', label: 'Prettier + Tailwind' }
 ];
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
             <button
               key={example.id}
               type="button"
-              className={activeExample === index ? "active" : undefined}
+              className={activeExample === index ? 'active' : undefined}
               onClick={() => setActiveExample(index)}
             >
               {example.label}

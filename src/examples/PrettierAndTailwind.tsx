@@ -16,7 +16,7 @@ function PrettierAndTailwind() {
       <section className="space-y-3">
         <h3 className="m-0 text-lg font-medium text-[var(--text-h)]">Prettier — before / after</h3>
         <p className="text-sm text-[var(--text)]">
-          Same logic; Prettier applies <code>semi</code>, double quotes, <code>printWidth: 120</code>, and{" "}
+          Same logic; Prettier applies <code>semi</code>, double quotes, <code>printWidth: 120</code>, and{' '}
           <code>arrowParens: &quot;avoid&quot;</code>.
         </p>
         <div className="grid gap-4 md:grid-cols-2">
@@ -45,15 +45,15 @@ const long = { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10, k: 1
             <p className="m-0 text-center text-sm font-medium text-[var(--text-h)]">Before (inline styles)</p>
             <div
               style={{
-                padding: "16px",
-                borderRadius: "8px",
-                border: "1px solid var(--border)",
-                background: "var(--social-bg)",
-                boxShadow: "var(--shadow)",
+                padding: '16px',
+                borderRadius: '8px',
+                border: '1px solid var(--border)',
+                background: 'var(--social-bg)',
+                boxShadow: 'var(--shadow)'
               }}
             >
-              <p style={{ margin: 0, color: "var(--text-h)", fontWeight: 500 }}>Task card</p>
-              <p style={{ margin: "8px 0 0", fontSize: "14px" }}>Styled without Tailwind utilities.</p>
+              <p style={{ margin: 0, color: 'var(--text-h)', fontWeight: 500 }}>Task card</p>
+              <p style={{ margin: '8px 0 0', fontSize: '14px' }}>Styled without Tailwind utilities.</p>
             </div>
             <SnippetPanel title="Code">
               {`<div style={{ padding: "16px", borderRadius: "8px", border: "1px solid var(--border)" }}>

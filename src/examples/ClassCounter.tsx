@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component } from 'react';
 
 /**
  * Same counter as UseStateCounter, but as a class component.
@@ -17,7 +17,7 @@ type ClassCounterState = {
 
 class ClassCounter extends Component<object, ClassCounterState> {
   state: ClassCounterState = {
-    count: 0,
+    count: 0
   };
 
   increase = () => {
