@@ -3,19 +3,26 @@ import UseStateCounter from './examples/UseStateCounter';
 import ClassCounter from './examples/ClassCounter';
 import PureVsImpure from './examples/PureVsImpure';
 import PrettierAndTailwind from './examples/PrettierAndTailwind';
+import Timer from './examples/Timer';
 import './App.css';
 
-type ExampleId = 'useState-counter' | 'class-counter' | 'pure-vs-impure' | 'prettier-tailwind';
+type ExampleId =
+  | 'useState-counter'
+  | 'class-counter'
+  | 'pure-vs-impure'
+  | 'prettier-tailwind'
+  | 'useEffect-timer';
 
 const examples: { id: ExampleId; label: string }[] = [
   { id: 'useState-counter', label: 'useState — Counter' },
   { id: 'class-counter', label: 'Class — Counter' },
   { id: 'pure-vs-impure', label: 'Pure vs impure' },
-  { id: 'prettier-tailwind', label: 'Prettier + Tailwind' }
+  { id: 'prettier-tailwind', label: 'Prettier + Tailwind' },
+  { id: 'useEffect-timer', label: 'useEffect — Timer' }
 ];
 
 function App() {
-  const [activeExample, setActiveExample] = useState<number>(3);
+  const [activeExample, setActiveExample] = useState<number>(4);
 
   return (
     <>
@@ -42,6 +49,7 @@ function App() {
         {activeExample === 1 && <ClassCounter />}
         {activeExample === 2 && <PureVsImpure />}
         {activeExample === 3 && <PrettierAndTailwind />}
+        {activeExample === 4 && <Timer />}
       </section>
 
       <div className="ticks"></div>
