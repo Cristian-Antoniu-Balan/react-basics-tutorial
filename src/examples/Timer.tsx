@@ -86,7 +86,7 @@ function Timer() {
 
     document.body.addEventListener('click', onBodyClick);
     // cleanup / removeEventListener — added later with the trainer
-    return () => removeEventListener('click', onBodyClick);
+    return () => document.body.removeEventListener('click', onBodyClick);
   }, []);
 
   return (
