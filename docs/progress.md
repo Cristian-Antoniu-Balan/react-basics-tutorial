@@ -13,3 +13,7 @@ Check off each lesson as you complete it. Your AI tutor should update this file 
 - [ ] **Lesson 9** — React Router
 - [ ] **Lesson 10** — Data fetching
 - [ ] **Lesson 11** — Project structure
+
+### Extra (not in numbered curriculum)
+
+- [x] **Demo menu** — registry `demos[]`, `activeId`, `DemoTab` badge, LOCAL vs GLOBAL persistence (2026-08-10)

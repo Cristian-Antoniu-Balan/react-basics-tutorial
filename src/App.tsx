@@ -1,31 +1,59 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import UseStateCounter from './examples/UseStateCounter';
 import ClassCounter from './examples/ClassCounter';
 import PureVsImpure from './examples/PureVsImpure';
 import PrettierAndTailwind from './examples/PrettierAndTailwind';
 import Timer from './examples/Timer';
 import LiftingState from './examples/LiftingState';
+import DemoMenu from './examples/DemoMenu';
 import './App.css';
 
-type ExampleId =
-  | 'useState-counter'
-  | 'class-counter'
-  | 'pure-vs-impure'
-  | 'prettier-tailwind'
-  | 'useEffect-timer'
-  | 'lifting-state';
+type Demo = {
+  id: string;
+  step: number;
+  title: string;
+  element: ReactNode;
+};
 
-const examples: { id: ExampleId; label: string }[] = [
-  { id: 'useState-counter', label: 'useState — Counter' },
-  { id: 'class-counter', label: 'Class — Counter' },
-  { id: 'pure-vs-impure', label: 'Pure vs impure' },
-  { id: 'prettier-tailwind', label: 'Prettier + Tailwind' },
-  { id: 'useEffect-timer', label: 'useEffect — Timer' },
-  { id: 'lifting-state', label: 'Lifting state — RON ↔ puncte' }
+// Add a new example = one object in this list (no other file changes for the menu).
+const demos: Demo[] = [
+  { id: 'useState-counter', step: 1, title: 'useState — Counter', element: <UseStateCounter /> },
+  { id: 'class-counter', step: 2, title: 'Class — Counter', element: <ClassCounter /> },
+  { id: 'pure-vs-impure', step: 3, title: 'Pure vs impure', element: <PureVsImpure /> },
+  { id: 'prettier-tailwind', step: 4, title: 'Prettier + Tailwind', element: <PrettierAndTailwind /> },
+  { id: 'useEffect-timer', step: 5, title: 'useEffect — Timer', element: <Timer /> },
+  { id: 'lifting-state', step: 6, title: 'Lifting state', element: <LiftingState /> },
+  { id: 'demo-menu', step: 7, title: 'Meniu demos', element: <DemoMenu /> }
 ];
 
+type DemoTabProps = {
+  title: string;
+  step: number;
+  isActive: boolean;
+  onSelect: () => void;
+};
+
+/** Concept name in the button; step number as a corner badge (not jammed into the label). */
+function DemoTab({ title, step, isActive, onSelect }: DemoTabProps) {
+  return (
+    <button
+      type="button"
+      className={isActive ? 'demo-tab active' : 'demo-tab'}
+      onClick={onSelect}
+      aria-current={isActive ? 'page' : undefined}
+    >
+      {title}
+      <span className="demo-tab-badge">{step}</span>
+    </button>
+  );
+}
+
 function App() {
-  const [activeExample, setActiveExample] = useState<number>(5);
+  // Single source of truth for navigation: the active id.
+  // Title, step, and content are DERIVED with find — we do not store the selected element in state.
+  // useState lives in memory → refresh resets to the initial value below.
+  const [activeId, setActiveId] = useState(demos[demos.length - 1].id);
+  const active = demos.find(d => d.id === activeId) ?? demos[0];
 
   return (
     <>
@@ -36,24 +64,23 @@ function App() {
         </div>
 
         <nav className="example-nav" aria-label="Examples">
-          {examples.map((example, index) => (
-            <button
-              key={example.id}
-              type="button"
-              className={activeExample === index ? 'active' : undefined}
-              onClick={() => setActiveExample(index)}
-            >
-              {example.label}
-            </button>
+          {demos.map(demo => (
+            <DemoTab
+              key={demo.id}
+              title={demo.title}
+              step={demo.step}
+              isActive={demo.id === active.id}
+              onSelect={() => setActiveId(demo.id)}
+            />
           ))}
         </nav>
 
-        {activeExample === 0 && <UseStateCounter />}
-        {activeExample === 1 && <ClassCounter />}
-        {activeExample === 2 && <PureVsImpure />}
-        {activeExample === 3 && <PrettierAndTailwind />}
-        {activeExample === 4 && <Timer />}
-        {activeExample === 5 && <LiftingState />}
+        <main className="demo-main">
+          <h2>
+            Pas {active.step} — {active.title}
+          </h2>
+          {active.element}
+        </main>
       </section>
 
       <div className="ticks"></div>
